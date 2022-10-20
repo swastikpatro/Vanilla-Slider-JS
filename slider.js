@@ -14,7 +14,6 @@ function displayPeople(peopleData) {
       return `
     <!-- single slide -->
         <article class="slide ${i === 0 ? 'active' : ''}">
-        ${i}
           <img
             src="${img}"
             alt="${name}"
