@@ -315,30 +315,35 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .reviews span {
-  font-size: 1em;
+  font-size: 0.85em;
   color: var(--primary-500);
   margin-right: 1rem;
   font-weight: 800;
+  letter-spacing: var(--letterSpacing);
 }
 
 .img.profile-img {
   width: 150px;
   height: 150px;
   object-fit: cover;
-  border: 1px solid var(--clr-grey-7);
+  border: 1px solid var(--grey-700);
   background: var(--clr-white);
   padding: 0.25rem;
   border-radius: 50%;
-  box-shadow: var(--dark-shadow);
   margin: 0 auto;
   margin-bottom: 0.5rem;
+  box-shadow: var(--shadow-3);
 }
 
 .slide {
-  border: 2px solid red;
+  border: 1px solid var(--primary-700);
+  border-radius: 1rem;
+  padding: 0.5rem;
 }
 
 h4 {
@@ -347,16 +352,24 @@ h4 {
   color: var(--primary-500);
   letter-spacing: var(--letterSpacing);
   margin: 0.5rem 0;
+  margin-bottom: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .title {
   margin-bottom: 1.25rem;
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
   text-transform: capitalize;
+  font-size: 0.75rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.25rem;
+  color: var(--primary-800);
+  font-weight: 600;
 }
 
 .text {
-  width: 100%;
+  width: 95%;
   max-width: 35em;
   margin: 0 auto;
   line-height: 1.8;
@@ -367,14 +380,14 @@ h4 {
 .quote-icon {
   font-size: 3rem;
   color: var(--primary-500);
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
 }
 
 .btn {
   position: absolute;
-  top: 350px;
+  top: 300px;
   border-radius: 50%;
-  padding: 0.5rem 0.75rem;
+  padding: 0.6rem 0.75rem;
   background: var(--grey-500);
   color: var(--white);
   border: transparent;
@@ -398,6 +411,7 @@ h4 {
 
   .btn {
     font-size: 1.3rem;
+    padding: 0.75rem 1rem;
   }
 
   .quote-icon {
@@ -412,9 +426,11 @@ h4 {
   height: 450px;
   overflow: hidden;
   position: relative;
+  box-shadow: var(--shadow-4);
 }
 
 .slide {
+  background: var(--white);
   position: absolute;
   top: 0;
   left: 0;
@@ -422,6 +438,7 @@ h4 {
   height: 100%;
   transition: all 0.3s ease-in-out;
   opacity: 0;
+  box-shadow: var(--shadow-4);
 }
 
 .slide.active {
@@ -431,6 +448,6 @@ h4 {
 .slide.next {
   transform: translateX(100%);
 }
-.slide.last {
+.slide.prev {
   transform: translateX(-100%);
 }
