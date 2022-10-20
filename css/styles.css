@@ -374,6 +374,7 @@ h4 {
   line-height: 1.8;
   color: var(--grey-500);
   letter-spacing: 1px;
+  font-size: 0.95rem;
 }
 
 .quote-icon {
@@ -401,6 +402,9 @@ h4 {
 }
 
 @media screen and (min-width: 768px) {
+  .text {
+    font-size: 1rem;
+  }
   .next-btn {
     right: -5rem;
   }
@@ -422,7 +426,7 @@ h4 {
 
 .slide-container {
   display: flex;
-  height: 470px;
+  height: 450px;
   overflow: hidden;
   position: relative;
 }
