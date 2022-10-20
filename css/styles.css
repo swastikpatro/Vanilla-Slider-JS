@@ -301,7 +301,7 @@ section {
   width: 85vw;
   max-width: var(--fixedWidth); /* 600 px*/
   margin: 0 auto;
-  margin-top: 5rem;
+  margin-top: 2rem;
   text-align: center;
   padding: 1rem 0;
   position: relative;
@@ -341,7 +341,6 @@ section {
 }
 
 .slide {
-  border: 1px solid var(--primary-700);
   border-radius: 1rem;
   padding: 0.5rem;
 }
@@ -423,22 +422,22 @@ h4 {
 
 .slide-container {
   display: flex;
-  height: 450px;
+  height: 470px;
   overflow: hidden;
   position: relative;
-  box-shadow: var(--shadow-4);
 }
 
 .slide {
   background: var(--white);
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 10%;
+  width: 80%;
   height: 100%;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
   opacity: 0;
-  box-shadow: var(--shadow-4);
+  transform: translateX(-200%);
+  border: 1px solid var(--primary-700);
 }
 
 .slide.active {
