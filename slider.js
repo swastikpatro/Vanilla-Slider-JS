@@ -7,7 +7,7 @@ const prevBtn = document.querySelector('.prev-btn');
 const nextBtn = document.querySelector('.next-btn');
 
 function displayPeople(peopleData) {
-  console.log(peopleData);
+  // console.log(peopleData);
   const myHTML = peopleData
     .map((person, i) => {
       const { img, name, job, text } = person;
@@ -41,7 +41,6 @@ function startSlider() {
     slideContainer.querySelector('.active') || slideContainer.firstElementChild;
   prevEle = current.previousElementSibling || slideContainer.lastElementChild;
   nextEle = current.nextElementSibling || slideContainer.firstElementChild;
-  console.log(prevEle, nextEle);
 }
 
 function applyClasses() {
@@ -73,10 +72,29 @@ function move(direction) {
   applyClasses();
 }
 
-function handleClicks() {
-  prevBtn.addEventListener('click', () => move('back'));
-  nextBtn.addEventListener('click', move);
-}
+const throttleFunction = (func, delay) => {
+  // Previously called time of the function
+  let prev = 0;
+  return (...args) => {
+    // Current called time of the function
+    let now = new Date().getTime();
+
+    // Logging the difference between previously
+    // called and current called timings
+    // console.log(now - prev, delay);
+
+    // If difference is greater than delay call
+    // the function again.
+    if (now - prev > delay) {
+      prev = now;
+
+      // "..." is the spread operator here
+      // returning the function with the
+      // array of arguments
+      return func(...args);
+    }
+  };
+};
 
 window.addEventListener('DOMContentLoaded', () => {
   displayPeople([...structuredClone(people)]);
@@ -84,5 +102,11 @@ window.addEventListener('DOMContentLoaded', () => {
   startSlider();
   applyClasses();
 
-  handleClicks();
+  prevBtn.addEventListener(
+    'click',
+    throttleFunction(() => {
+      move('back');
+    }, 500)
+  );
+  nextBtn.addEventListener('click', throttleFunction(move, 500));
 });
